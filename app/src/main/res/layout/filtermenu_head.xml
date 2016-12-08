@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Aty.MainActivity">
+
+    <com.zhbitzwz.vehiclesystems.MyView.FilterMenuLayout
+        android:id="@+id/filter_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="8dp"
+        app:fm_expandedRadius="96dp"
+        app:fm_collapsedRadius="24dp"
+        app:fm_centerBottom="50dp"
+        app:fm_centerRight="50dp"
+        app:fm_primaryColor="#ff37aa4a"
+        app:fm_primaryDarkColor="#ff20622b">
+    </com.zhbitzwz.vehiclesystems.MyView.FilterMenuLayout>
+
+</FrameLayout>

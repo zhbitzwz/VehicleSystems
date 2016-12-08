@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zhbitzwz.vehiclesystems">
+
+    <!-- 高德访问权限，网络定位 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 野狗用户认证访问权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:name=".Application.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+
+        <!--高德推荐的Initial方法-->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="98646889fea9f4cc39d75360ab748925" />
+
+        <activity android:name=".Aty.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--在android4.0以上系统中的 Activity加上下面这句，可以支持地图横竖屏切换-->
+        <!--android:configChanges="orientation|keyboardHidden|screenSize"-->
+        <activity
+            android:name=".Aty.MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".Aty.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".Aty.MainActivity" />
+        <activity
+            android:name=".Aty.WeatherSearchActivity"
+            android:label="@string/title_activity_weatherSearch"
+            android:parentActivityName=".Aty.MainActivity" />
+        <activity
+            android:name=".Aty.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:parentActivityName=".Aty.MainActivity" />
+        <activity
+            android:name=".Aty.RegActivity"
+            android:label="@string/title_activity_reg"
+            android:parentActivityName=".Aty.LoginActivity" />
+        <activity
+            android:name=".Aty.WilddogVideoActivity"
+            android:label="@string/title_activity_wilddogvideo"
+            android:parentActivityName=".Aty.MainActivity" />
+
+        <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
+        <service android:name="com.amap.api.location.APSService"></service>
+    </application>
+
+</manifest>

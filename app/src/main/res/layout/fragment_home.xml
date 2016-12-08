@@ -1,0 +1,132 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+        </com.amap.api.maps.MapView>
+
+
+        <ImageButton
+            android:id="@+id/btn_layer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="52dp"
+            android:background="@drawable/map_layer_component"
+            android:src="@drawable/btn_layer_48"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:background="@color/snow">
+
+        <!--添加内容布局-->
+        <include
+            android:id="@+id/start_up_picture"
+            layout="@layout/filtermenu_head"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/linearlayout_hompage_tocar"
+            android:layout_width="200dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/md_blue_500"
+            android:baselineAligned="false">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_homepage_tocar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|left"
+                    android:src="@drawable/action_select_left_car" />
+
+                <TextView
+                    android:id="@+id/tv_homepage_tocar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/iv_homepage_tocar"
+                    android:layout_toRightOf="@+id/iv_homepage_tocar"
+                    android:text="硬件对接"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/relative_hompage_weather"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:layout_toEndOf="@+id/linearlayout_hompage_tocar"
+            android:layout_toRightOf="@+id/linearlayout_hompage_tocar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/iv_homepage_weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|left"
+                    android:src="@drawable/ic_get_weather_show_home" />
+
+                <TextView
+                    android:id="@+id/tv_homepage_weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="天气预报"
+                    android:textStyle="bold"
+                    android:layout_gravity="right|top|bottom|center|left"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/iv_homepage_weather"
+                    android:layout_toEndOf="@+id/iv_homepage_weather" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+                <EditText
+                    android:id="@+id/et_city_search"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:hint="请输入城市"/>
+                <Button
+                    android:id="@+id/bt_city_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="查询"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
+

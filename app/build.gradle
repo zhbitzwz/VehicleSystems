@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
+
+    signingConfigs {
+        //调试版的keystore
+        debug {
+            storeFile file("D:\\studysoftware\\Android\\ZWZ_Key\\zhbitzwzkey.jks")
+            storePassword "zwz5201314"
+            keyAlias "zhbitzwzkey"
+            keyPassword "zwz5201314"
+        }
+        //发布版的keystore
+        release {
+            storeFile file("D:\\studysoftware\\Android\\ZWZ_releaseKey\\zwzreleaseKey.jks")
+            storePassword "zwz5201314"
+            keyAlias "zwzreleasekey"
+            keyPassword "zwz5201314"
+        }
+    }
+    defaultConfig {
+        applicationId "com.zhbitzwz.vehiclesystems"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile files('libs/AMap3DMap_4.0.1_AMapNavi_1.9.2_AMapSearch_3.5.0_AMapLocation_3.0.0_20160927.jar')
+    compile files('libs/Msc.jar')
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.linroid.filtermenu:library:0.2.+@aar'
+    compile 'com.wilddog.client:wilddog-auth-android:2.0.1'
+    compile 'com.wilddog.client:wilddog-sync-android:2.0.1'
+    compile files('libs/wilddog-video-android-0.3.1.jar')
+}

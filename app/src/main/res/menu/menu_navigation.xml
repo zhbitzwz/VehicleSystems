@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/action_select_left_home"/>
+
+    <item
+        android:id="@+id/car"
+        android:title="car"
+        android:icon="@drawable/action_select_left_car"/>
+
+    <item
+        android:id="@+id/devices"
+        android:title="devices"
+        android:icon="@drawable/action_select_left_devices"/>
+
+    <item
+        android:id="@+id/exit"
+        android:title="exit"
+        android:icon="@drawable/action_select_left_exit"/>
+
+</menu>
